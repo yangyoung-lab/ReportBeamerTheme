@@ -1,0 +1,99 @@
+% beamerthemeUCBerkeley.sty v1.2 (January 5, 2021)
+% by Overleaf (LianTze Lim, Ryan Looney)
+\ProvidesPackage{Yang_renmin}
+
+\RequirePackage{silence}
+\WarningsOff[mathdesign/mdbch]
+\usetheme{default}
+\RequirePackage{etoolbox}
+\RequirePackage{xeCJK}
+\setCJKmainfont{SourceHanSerifSC-Regular}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% \RequirePackage[T1]{fontenc}
+% \RequirePackage[charter,expert]{mathdesign}
+% \RequirePackage[scaled=.96,oldstyle]{XCharter}
+% \RequirePackage[default,scale=0.96,osfigures]{opensans}
+\RequirePackage{fontspec}
+\setromanfont{Georgia}
+% \setsansfont[Scale=MatchLowercase]{Open Sans}
+
+\RequirePackage{tikz}
+
+\definecolor{BerkeleyGold}{RGB}{193,129,45}
+\definecolor{Medalist}{RGB}{120,0,0}
+\definecolor{SubMedalist}{RGB}{50,0,0}
+\definecolor{BerkeleyBlueText}{RGB}{0,0,0}
+\definecolor{FoundersRock}{HTML}{3B7EA1}
+\definecolor{BerkeleyTableGold}{RGB}{222,157,46}
+\definecolor{CaliforniaGold}{HTML}{FDB515}
+\definecolor{BerkeleyTableBlue1}{RGB}{207,226,234}
+\definecolor{BerkeleyTableBlue2}{RGB}{232,241,245}
+\definecolor{RUCRed}{RGB}{142,0,0}
+
+\setbeamertemplate{title page}[default][center]
+\setbeamerfont{title}{family=\rmfamily,size=\Huge, series=\bfseries}
+\setbeamerfont{subtitle}{family=\rmfamily,size=\LARGE, series=\mdseries}
+\setbeamerfont{author}{size=\Large}
+
+\setbeamersize{text margin left=2em, text margin right=2em}
+
+\setbeamertemplate{frametitle}{
+\begin{centering}
+	\vskip0.05\paperheight
+	\insertframetitle	
+	\par
+	\color{SubMedalist}{\large\insertframesubtitle}
+	\par
+\end{centering}
+}
+\setbeamerfont{frametitle}{family=\rmfamily,series=\mdseries,size=\LARGE}
+\setbeamertemplate{framesubtitle}{
+\begin{centering}
+	\insertframesubtitle
+	\par
+\end{centering}
+}
+\setbeamerfont{block title}{family=\rmfamily,size=\large}
+\setbeamercolor{titlelike}{fg=Medalist}
+\setbeamercolor{normal text}{fg=BerkeleyBlueText}
+\setbeamercolor{structure}{fg=BerkeleyBlueText}
+\setbeamercolor{block title}{fg=Medalist}
+
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{--}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+\setlength{\leftmargini}{1.25em}
+\setlength{\leftmarginii}{1em}
+\setlength{\leftmarginiii}{1em}
+
+% \pgfdeclareimage[width=1.01\paperwidth]{blueslope}{blueslope}
+\pgfdeclareimage[height=0.0777\paperheight]{logo}{logo}
+
+\setbeamertemplate{background}{%
+\begin{tikzpicture}[overlay,remember picture]
+  \fill[RUCRed] (current page.south west) -- +(0, 0.10\paperheight) -- +(\paperwidth, 0.1\paperheight) -- (current page.south east) -- cycle;  
+% \node[anchor=south west,inner sep=0pt,draw=none,yshift=-6pt,xshift=-1pt] at (current page.south west) {\pgfuseimage{blueslope}};%
+\node[anchor=south west,inner sep=0pt,draw=none,xshift=0.025\paperheight,yshift=0.0075\paperheight] at (current page.south west) {\pgfuseimage{logo}};%
+\end{tikzpicture}%
+}
+
+\setbeamertemplate{footline}{%
+\vskip0.15\paperheight
+}
+
+\newcommand{\smallframetitle}{%
+  \setbeamertemplate{frametitle}{\vskip0.15\paperheight\insertframetitle}
+  \setbeamerfont{frametitle}{size=\large,series=\bfseries}
+}
+\newcommand{\normalframetitle}{%
+  \setbeamertemplate{frametitle}{\vskip0.2\paperheight\insertframetitle} 
+  \setbeamerfont{frametitle}{size=\LARGE,series=\mdseries}
+}
+
+\renewcommand{\arraystretch}{1.2}
+\newcommand{\tableheadrow}{\rowcolor{BerkeleyTableGold}}
+\newcommand{\tableheadcol}[1]{{\bfseries\color{white}#1}}
+% \rowcolors{2}{BerkeleyTableBlue1}{BerkeleyTableBlue2}
+\AtBeginEnvironment{tabular}{\color{black}}
